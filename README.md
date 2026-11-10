@@ -1,5 +1,7 @@
 # Hire Jose Jerez
 
+Live portfolio: **https://hire-jose-jerez.vercel.app** · [Personal view](https://hire-jose-jerez.vercel.app/?view=personal)
+
 An editable Next.js 16 / React 19 / Tailwind CSS 4 portfolio for IT Operations, systems administration, IAM, enterprise applications, and automation roles.
 
 ## Run locally
@@ -52,4 +54,4 @@ npm run test:e2e
 
 Connect this repository to Vercel with the Next.js preset and the repository root as Root Directory. `vercel.json` sets `npm ci` and `npm run build`. Leave Output Directory automatic. See [.env.example](.env.example) for optional connections; never commit actual keys.
 
-The original public URL returned a Vercel 404. The homepage route existed; the precise deployment cause requires account settings/logs. Read [Repository audit](docs/REPOSITORY-AUDIT.md) and [Validation](docs/VALIDATION.md) for observed findings and limitations.
+The original public URL returned a Vercel 404. The homepage route existed, but the Vercel project was configured with the Other framework preset. The preset is now Next.js, and the completed source has been published successfully. Read [Publication status](docs/PUBLICATION.md), [Repository audit](docs/REPOSITORY-AUDIT.md), and [Validation](docs/VALIDATION.md) for findings and remaining integration setup.

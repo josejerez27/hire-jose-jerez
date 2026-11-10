@@ -2,6 +2,8 @@
 
 Source inspected: `josejerez27/hire-jose-jerez`, branch `main`, commit `faa8407790dc86a971f34f022def2d6af85443a0`. Every tracked source/configuration file was inspected; public assets were inventoried. The download preserves the original public assets and agent instructions.
 
+**Publication follow-up, November 10, 2026:** the owner later authenticated GitHub and Vercel in the browser. The project was confirmed to use the **Other** framework preset, with a correct root directory and domain assignment. The preset was saved as **Next.js**, the tested source was committed, and Vercel produced a Ready production deployment. The public site now works at https://hire-jose-jerez.vercel.app. The findings below describe the initial inspection; see `PUBLICATION.md` for current status.
+
 ## What originally existed
 
 - Next.js 16.2.7 App Router, React 19.2.4, TypeScript, Tailwind CSS 4, and ESLint.

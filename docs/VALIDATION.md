@@ -7,7 +7,7 @@
 - `npm run lint`: passed.
 - `npm run build`: passed, including TypeScript and static page generation.
 - `npm run typecheck`: passed.
-- `npm test`: 14 backend/PDF tests passed, including an actual local-file submission, approval, unpublishing, and persistence check in an isolated temporary directory.
+- `npm test`: 15 backend/PDF tests passed, including an actual local-file submission, approval, unpublishing, and persistence check in an isolated temporary directory. Public letters are also tested without Vercel storage configuration.
 - `npm run test:e2e` with installed Chrome: 20 desktop/mobile tests passed. The Playwright browser binary was not installed here, so the supported `PLAYWRIGHT_CHANNEL=chrome` override was used.
 - Production server starts at `http://127.0.0.1:3000`.
 - Browser checked the live local title, actual iframe source URLs, and desktop/mobile layouts. No horizontal overflow at 320, 375, 768, or 1440 pixels in the automated checks.
@@ -24,16 +24,14 @@ Backend tests use mocked fetch calls to exercise origin/input validation, no-key
 
 Browser tests verify real application navigation, content, downloads, artist selection, map wiring, jokes, chat rendering and error recovery, and live-score/failure rendering. Third-party frames and selected API responses are intercepted for deterministic testing; these checks do not establish real Spotify playback, Google Maps account configuration, or OpenAI model access.
 
-The actual local `/api/sports` responds with per-team unavailable messages because outbound requests from the local server are blocked here. The browser can access the upstream ESPN feeds; Vercel's preview must still be checked for server-side provider access.
+The actual local `/api/sports` responds with per-team unavailable messages because outbound requests from the local server are blocked here. After publication, the deployed endpoint was verified to return games for all four teams without errors.
 
 ## Remaining owner/account steps
 
 - Supply work history, certifications, restaurant/trail favorites, grilling notes, and a personal Spotify playlist URL.
 - Configure an OpenAI key and available model to turn on the real AI chatbot; no paid provider calls were made during development.
 - Optionally configure Google Maps Embed search and a shared rate limiter.
-- Push/review the prepared files in GitHub and deploy from the authorized Vercel account. Neither action has occurred in this session; Git is not installed, GitHub is not connected, and the Vercel connector is disabled by the account administrator.
-- Confirm the production alias and resolve the externally observed 404 using project settings and deployment logs.
-- The browser's Vercel dashboard also redirects to its login page; there is no authenticated dashboard session available here.
-- Test real provider connections in the deployed preview and add a custom domain later.
+- Publishing is complete through the owner's authenticated browser sessions. The production alias is assigned, and the observed 404 is resolved. See `PUBLICATION.md`.
+- Configure and test the remaining AI, playlist, recommendation storage/review, and optional Google Maps connections. Add a custom domain later.
 
-No deployment success or end-to-end AI response is claimed by these local results.
+Deployment success was verified separately in Vercel and in a signed-out browser context. No end-to-end AI response is claimed without configured provider credentials.

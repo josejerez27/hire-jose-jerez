@@ -8,6 +8,13 @@ export type PublicRecommendation = Pick<Recommendation, "id" | "name" | "title" 
 const hashKey = "hire-jose:recommendations:v1";
 let writeQueue: Promise<unknown> = Promise.resolve();
 
+export function recommendationStorageReady(): boolean {
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (url || token) return !!url && !!token;
+  return !process.env.VERCEL;
+}
+
 export function validateRecommendation(value: unknown): RecommendationInput | null {
   if (!value || typeof value !== "object") return null;
   const data = value as Record<string, unknown>;

@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-export function RecommendationForm() {
+export function RecommendationForm({ acceptingSubmissions = true, email = "josejerez310@yahoo.com" }: { acceptingSubmissions?: boolean; email?: string }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -19,6 +19,7 @@ export function RecommendationForm() {
     } catch (err) { setError(err instanceof Error ? err.message : "Couldn’t connect. Please try again."); }
     finally { setBusy(false); }
   }
+  if (!acceptingSubmissions) return <section id="recommend" className="panel recommendation-form-panel"><p className="eyebrow">WORKED WITH JOSE?</p><h2>Your words would mean a lot.</h2><p>The recommendation inbox is being connected. In the meantime, email me your recommendation or reference letter. I’ll ask your permission before publishing it.</p><a className="button" href={`mailto:${email}?subject=Recommendation%20for%20Jose`}>Email Jose a recommendation ↗</a></section>;
   return <section id="recommend" className="panel recommendation-form-panel"><p className="eyebrow">WORKED WITH JOSE?</p><h2>Leave a recommendation.</h2><p>A story, a project, or something you appreciated about working together. Your words stay private until Jose reviews and approves them.</p>
     <form onSubmit={submit} className="recommendation-form"><fieldset disabled={busy}><div className="form-grid">
       <label>Your name<input name="name" autoComplete="name" required maxLength={80} /></label>

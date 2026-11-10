@@ -3,7 +3,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 type Message = { role: "user" | "assistant"; content: string };
-export function AskJose() {
+export function AskJose({ connected = true }: { connected?: boolean }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [question, setQuestion] = useState("");
   const [busy, setBusy] = useState(false);
@@ -24,7 +24,8 @@ export function AskJose() {
   }
   function submit(event: FormEvent) { event.preventDefault(); void ask(question); }
   return <div className="chat-card">
-    <div className="chat-top"><span className="avatar">JJ</span><div><strong>Ask Jose</strong><small>AI portfolio assistant</small></div><span className="chip">Powered by AI</span></div>
+    <div className="chat-top"><span className="avatar">JJ</span><div><strong>Ask Jose</strong><small>AI portfolio assistant</small></div><span className="chip">{connected ? "Powered by AI" : "Connection pending"}</span></div>
+    {!connected && <p className="widget-note chat-setup-note">AI chat is being connected. For now, <a className="text-link" href="mailto:josejerez310@yahoo.com">email Jose directly ↗</a>.</p>}
     <div className="chat-messages" role="log" aria-label="Conversation" aria-live="polite" aria-busy={busy}>
       <p className="chat-bubble assistant">Hi! Ask me about Jose’s projects, experience, skills, or how to get in touch.</p>
       {messages.map((message, i) => <p className={`chat-bubble ${message.role}`} key={i}><span className="sr-only">{message.role === "user" ? "You" : "Ask Jose"}: </span>{message.content}</p>)}

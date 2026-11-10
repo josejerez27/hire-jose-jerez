@@ -43,6 +43,7 @@ The inbox uses an eight-hour signed HttpOnly/SameSite session cookie and adds Se
 
 - **Local:** an ignored `.data/recommendations.json`, outside `public/`. Local writes are serialized and replace the file atomically. This is intended for a single local server process.
 - **Vercel:** configure `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`. The backend refuses to store submissions on ephemeral serverless disk. It returns an unavailable message instead of pretending to save them.
+- Before Vercel storage is configured, owner-curated letters remain visible and the visitor submission page offers direct email instead of a form that cannot save. The form becomes available after configuring storage and redeploying.
 - Use separate Redis databases for Preview and Production. Records use the Redis hash `hire-jose:recommendations:v1`; keep credentials server-only. Do not expose a database token in client code.
 
 An inbox accepts up to 1,000 records. Manage stored submissions and any deletion/retention requests privately through the owner’s local file or Redis console; rejected entries are retained for review rather than automatically deleted. These private records must not be included in source archives or public assets.

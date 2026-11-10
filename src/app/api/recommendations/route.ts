@@ -1,13 +1,14 @@
-import { listRecommendations, publicRecommendation, submitRecommendation, validateRecommendation } from "@/lib/recommendations";
+import { listRecommendations, publicRecommendation, recommendationStorageReady, submitRecommendation, validateRecommendation } from "@/lib/recommendations";
 import { sameOrigin, privateJson } from "@/lib/review-auth";
 import { allowed } from "@/lib/rate-limit";
 import { profile } from "@/lib/profile";
 
 export const runtime = "nodejs";
 export async function GET() {
+  if (!recommendationStorageReady()) return privateJson({ items: profile.references, acceptingSubmissions: false });
   try {
     const items = (await listRecommendations()).filter(item => item.status === "approved" && item.consent === true).map(publicRecommendation);
-    return privateJson({ items: [...profile.references, ...items] });
+    return privateJson({ items: [...profile.references, ...items], acceptingSubmissions: true });
   } catch { return privateJson({ items: profile.references, error: "Recommendations are temporarily unavailable. Please try again shortly." }, 503); }
 }
 export async function POST(request: Request) {

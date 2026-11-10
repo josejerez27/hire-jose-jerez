@@ -88,6 +88,19 @@ test("Vercel refuses ephemeral recommendation storage and partial Redis configur
   await assert.rejects(partial.listRecommendations(), /both Redis/);
 });
 
+test("public letters remain readable before the Vercel recommendation inbox is connected", async () => {
+  const env = { VERCEL: "1" };
+  const store = load("src/lib/recommendations.ts", { env });
+  const auth = load("src/lib/review-auth.ts", { env });
+  const letter = { id: "owner-curated", name: "Test Author", title: "Colleague", relationship: "Project partner", message: "An owner-approved letter excerpt used only in this test." };
+  const api = load("src/app/api/recommendations/route.ts", { env, imports: { "@/lib/recommendations": store, "@/lib/review-auth": auth, "@/lib/rate-limit": { allowed: async () => true }, "@/lib/profile": { profile: { references: [letter], email: "jose@example.test" } } } });
+  const response = await api.GET();
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  assert.equal(data.items[0].id, letter.id); assert.equal(data.acceptingSubmissions, false); assert.equal(data.error, undefined);
+  assert.equal((await api.POST(request("/api/recommendations", "POST", input))).status, 503);
+});
+
 test("Redis storage preserves pending status and supports approval without local files", async () => {
   let record;
   const store = load("src/lib/recommendations.ts", { env: { VERCEL: "1", UPSTASH_REDIS_REST_URL: "https://redis.test", UPSTASH_REDIS_REST_TOKEN: "test-only" }, fetch: async (_url, options) => {

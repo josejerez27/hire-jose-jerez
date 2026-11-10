@@ -14,11 +14,11 @@ This change preserves the existing project descriptions, skills, interests, and 
 
 Validation: production build, lint, TypeScript checks, 9 backend/PDF tests, and 10 desktop/mobile browser tests pass locally. AI responses and selected provider requests are mocked in tests; no paid API calls were made. The server-side sports feed is network-blocked in this local environment and must be checked on Vercel. Actual AI answers require configured credentials.
 
-Publishing and the account-level 404 correction remain pending authenticated GitHub/Vercel access. This source archive is not a deployment and does not include Git history.
+The source was subsequently published through authenticated GitHub/Vercel browser sessions. Vercel's Other framework preset was corrected to Next.js, and the production domain now serves the portfolio. The downloadable source archive itself does not include Git history.
 
 ## Main files
 
-The subsequent layout update adds Professional / Personal tabs, persistent music, a higher Ask Jose sidebar, expandable sections, larger Help Desk Humor, a JJ-logo Easter egg, and reference letters/recommendations with private approval. Local validation now includes 14 backend tests and 20 desktop/mobile checks. Owner review needs a configured password; Vercel submissions need Redis. No publishing action has occurred.
+The subsequent layout update adds Professional / Personal tabs, persistent music, a higher Ask Jose sidebar, expandable sections, larger Help Desk Humor, a JJ-logo Easter egg, and reference letters/recommendations with private approval. Owner review needs a configured password; Vercel submissions need Redis. Setup-aware messages allow the public preview to work while optional integrations are being connected. See `PUBLICATION.md` for deployment status.
 
 - `src/data/profile.json`: editable facts and content.
 - `src/lib/profile.ts`: shapes for work history, certifications, and favorite places.

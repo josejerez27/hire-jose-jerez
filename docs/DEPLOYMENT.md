@@ -2,7 +2,7 @@
 
 ## Local project
 
-The working copy is `D:\Projects\sn-playwright\hire-jose-jerez`. The surrounding directory is a separate Playwright workspace. Its files were preserved. This portfolio was downloaded from GitHub as an archive because Git is not installed here; this folder is not a Git checkout and no commit or push has been made.
+The working copy is `D:\Projects\sn-playwright\hire-jose-jerez`. The surrounding directory is a separate Playwright workspace. Its files were preserved. This folder was restored from a source archive and is not a Git checkout. The tested source has since been committed through GitHub's authenticated browser interface and deployed to **https://hire-jose-jerez.vercel.app**. See `PUBLICATION.md` for the verified status.
 
 Use Node.js 22 (the `.nvmrc` and CI default). Verification here used Node.js 26.13.0. On Windows, use `npm.cmd` if PowerShell blocks `npm.ps1`.
 
@@ -87,6 +87,6 @@ Sports uses ESPN's public schedule feeds with a one-minute cache and periodic cl
 
 ## Access still required for publishing
 
-GitHub is not connected to this session, and the Vercel connector is disabled by the account administrator. No authenticated GitHub write or Vercel deployment has occurred. The public 404 therefore remains unresolved at the account/deployment level. See the audit for the exact checks to perform once Vercel settings are accessible.
+The GitHub and Vercel connectors were unavailable, but the owner signed in through the browser. Publishing was completed through those authenticated browser sessions. Vercel's Other framework preset was corrected to Next.js, and the production domain now serves the site. Future code commits to `main` trigger the connected Vercel build.
 
 Integration references: [OpenAI text generation](https://developers.openai.com/api/docs/guides/text), [Spotify embeds](https://developer.spotify.com/documentation/embeds/tutorials/creating-an-embed), [Google Maps embeds](https://developers.google.com/maps/documentation/embed/embedding-map).
