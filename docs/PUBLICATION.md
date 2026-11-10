@@ -28,3 +28,7 @@ The first successful production build took approximately 1 minute 35 seconds. Ve
 - **Maps:** regional OpenStreetMap embeds and external discovery links work without a key. Add a restricted Google Maps Embed key for in-widget search.
 
 Custom domain setup can follow after feedback. The existing `.vercel.app` production link can be shared now.
+
+## Selected visual direction
+
+The owner selected **Dusk Blue & Gold** from the screenshot explorations. The implemented theme uses a real decorative desert background, navy/blue panels, champagne-gold accents, locally hosted Space Grotesk headings, and “Less friction. More momentum.” See `THEME.md` for the palette, font license, asset path, and generation prompt.

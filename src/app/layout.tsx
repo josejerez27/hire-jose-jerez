@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const displayFont = localFont({
+  src: "./fonts/SpaceGrotesk.ttf",
+  variable: "--font-display",
+  weight: "300 700",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: { default: "Hire Jose Jerez | IT Operations & Automation", template: "%s | Jose Jerez" },
@@ -13,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className={`${displayFont.variable} h-full antialiased`}>
       <body>{children}</body>
     </html>
   );

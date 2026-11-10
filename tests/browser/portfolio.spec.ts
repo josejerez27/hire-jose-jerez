@@ -10,7 +10,7 @@ test("professional content, all sections, navigation, and narrow layouts", async
   page.on("pageerror", e => errors.push(e.message));
   await page.goto("/");
   await expect(page).toHaveTitle("Hire Jose Jerez | IT Operations & Automation");
-  await expect(page.locator("h1")).toContainText("Simplifying");
+  await expect(page.locator("h1")).toHaveText("Less friction.More momentum.");
   for (const value of ["5,600+", "< 2h 30m", "< 12 min", "3,500–5,000"]) await expect(page.locator(".metrics-grid")).toContainText(value);
   for (const id of ["home", "projects", "skills", "work-history", "certifications", "trails", "dugout", "grill", "music", "ask", "about", "contact"]) await expect(page.locator(`#${id}`)).toHaveCount(1);
   await expect(page.locator(".project-card")).toHaveCount(4);

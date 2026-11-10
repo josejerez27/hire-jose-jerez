@@ -11,6 +11,7 @@ JSON requires double quotes and does not allow comments or trailing commas. Do n
 ## Professional content
 
 - `summary`, `role`, `name`, `email`, `github`, and `yearsExperience`: core profile.
+- `heroHeadline`: the two homepage headline lines, currently “Less friction.” and “More momentum.”
 - `metrics`: the four homepage support figures.
 - `projects`: titles, categories, platform tags, descriptions, and outcomes. Keep outcome figures scoped to the relevant project.
 - `skills` and `experienceAreas`: platform list and professional focus.

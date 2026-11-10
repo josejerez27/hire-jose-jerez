@@ -4,6 +4,8 @@ Live portfolio: **https://hire-jose-jerez.vercel.app** · [Personal view](https:
 
 An editable Next.js 16 / React 19 / Tailwind CSS 4 portfolio for IT Operations, systems administration, IAM, enterprise applications, and automation roles.
 
+Visual direction: **Dusk Blue & Gold**, with a small decorative desert background and locally hosted heading font. See [Theme notes](docs/THEME.md).
+
 ## Run locally
 
 Use Node.js 22 or newer. From this project directory:
