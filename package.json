@@ -2,11 +2,19 @@
   "name": "hire-jose-jerez",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev",
+    "resume": "node scripts/generate-resume.mjs",
+    "prebuild": "npm run resume",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --test tests/unit/*.test.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "next": "16.2.7",
@@ -14,6 +22,7 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "1.65.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

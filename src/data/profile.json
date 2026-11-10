@@ -1,0 +1,42 @@
+{
+  "name": "Jose Jerez",
+  "headline": "Simplifying operations through automation and design",
+  "role": "IT Operations · Systems Administration · Automation",
+  "email": "josejerez310@yahoo.com",
+  "github": "https://github.com/josejerez27",
+  "summary": "IT Operations professional specializing in workflow automation, identity management, SaaS administration, and enterprise systems. Experienced supporting a workforce of 3,500–5,000 employees while designing automations, integrations, and operational workflows that improve efficiency, visibility, and service delivery.",
+  "interests": "Outside of technology, I enjoy baseball, football, hiking, camping, cooking, music, and finding great places to explore with my family.",
+  "metrics": [
+    { "value": "5,600+", "label": "Tickets resolved" },
+    { "value": "< 2h 30m", "label": "Average resolution" },
+    { "value": "< 12 min", "label": "Average first response" },
+    { "value": "3,500–5,000", "label": "Employees supported" }
+  ],
+  "yearsExperience": "4+",
+  "skills": ["Workflow Automation", "IT Operations", "Systems Administration", "SaaS Administration", "Identity Management", "ServiceNow", "Okta", "SSO", "SAML", "MFA", "Google Workspace", "Microsoft 365", "Workday", "Kandji", "Genesys Cloud", "Meraki", "Cloudflare VPN", "REST APIs", "Asset Management"],
+  "projects": [
+    { "title": "Asset Recovery Automation Platform", "category": "Integrations & asset lifecycle", "tag": "ServiceNow · Workday · FedEx · Asset Management", "description": "Designed and implemented an automated asset recovery workflow that generates return labels, tracks equipment status, automates follow-up communications, and improves asset visibility.", "outcome": "Less manual follow-up. Clearer equipment status." },
+    { "title": "Verification Management Workflow", "category": "SimpliVerified · workflow automation", "tag": "ServiceNow · Email Processing · Reporting", "description": "Built a verification workflow with automated intake, applicant tracking, flagged record detection, duplicate prevention, notifications, and dashboard reporting.", "outcome": "Structured intake and better visibility into verification work." },
+    { "title": "SLA Response Automation", "category": "Service delivery", "tag": "Workflow Automation · Slack · SLA Management", "description": "Developed automated reminder and escalation workflows that reduced average first-response times from approximately 18–19 minutes to 5–8 minutes.", "outcome": "5–8 minute first response in this workflow, down from 18–19 minutes." },
+    { "title": "Distribution List Request Portal", "category": "Self-service & access requests", "tag": "Service Catalog · Google Workspace", "description": "Created a structured request workflow replacing manual Slack requests and improving fulfillment efficiency.", "outcome": "A repeatable request process with clearer fulfillment." }
+  ],
+  "experienceAreas": [
+    { "title": "IT operations & support", "description": "Supporting enterprise teams, resolving tickets, and improving response and resolution times across a workforce of 3,500–5,000 employees." },
+    { "title": "Identity & access management", "description": "Experience with Okta, SSO, SAML, MFA, Google Workspace, and Microsoft 365 across enterprise environments." },
+    { "title": "Workflow automation & integrations", "description": "Connecting business processes through automated intake, notifications, reporting, asset workflows, and REST APIs." }
+  ],
+  "workHistory": [],
+  "references": [],
+  "certifications": [],
+  "restaurants": [],
+  "trails": [],
+  "grillNotes": [],
+  "spotifyPlaylistUrl": "",
+  "jokes": [
+    "Chuck Norris doesn't reset passwords. Passwords reset themselves out of respect.",
+    "Chuck Norris closed a ticket before the user opened it.",
+    "Chuck Norris doesn't miss an SLA. The SLA moves its deadline.",
+    "Chuck Norris doesn't troubleshoot DNS. DNS explains itself.",
+    "Chuck Norris enabled MFA. The second factor was another Chuck Norris."
+  ]
+}

@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Navigation } from "@/components/navigation";
+import { profile } from "@/lib/profile";
+
+export const metadata: Metadata = { title: "Résumé" };
+export default function Resume() {
+  return <><Navigation /><main id="main" className="shell resume"><div className="hero-buttons no-print"><a href="/jose-jerez-resume.pdf" download className="button">Download one-page PDF ↓</a><Link href="/#projects" className="text-link">Explore projects ↗</Link></div><h1>{profile.name}</h1><p className="resume-role">{profile.role}</p><p><a href={`mailto:${profile.email}`}>{profile.email}</a> · <a href={profile.github}>github.com/josejerez27</a></p><h2>Professional summary</h2><p>{profile.summary}</p><h2>Support & service delivery</h2><p>{profile.yearsExperience} years in IT · {profile.metrics.map(m => `${m.value} ${m.label.toLowerCase()}`).join(" · ")}</p><h2>Selected projects</h2>{profile.projects.map(project => <article className="resume-project" key={project.title}><h3>{project.title}</h3><p>{project.description}</p></article>)}<h2>Skills & platforms</h2><p>{profile.skills.join(" · ")}</p>{profile.workHistory.length > 0 && <><h2>Work history</h2>{profile.workHistory.map(role => <article key={`${role.company}-${role.title}`}><h3>{role.title} · {role.company}</h3><p>{role.dates}</p><ul>{role.highlights.map(h => <li key={h}>{h}</li>)}</ul></article>)}</>}{profile.certifications.length > 0 && <><h2>Certifications</h2>{profile.certifications.map(cert => <p key={cert.name}>{cert.name} · {cert.issuer} · {cert.date}</p>)}</>}<p className="no-print widget-note">This summary uses the background currently shared in the portfolio. Detailed employment and certification information will be included when provided.</p></main></>;
+}

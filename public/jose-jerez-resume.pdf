@@ -1,0 +1,71 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 3438 >>
+stream
+BT /F2 25 Tf 0.09 0.13 0.16 rg 46 750 Td (Jose Jerez) Tj ET
+BT /F1 11 Tf 0.09 0.13 0.16 rg 46 720 Td (IT Operations  |  Systems Administration  |  Automation) Tj ET
+BT /F1 9 Tf 0.09 0.13 0.16 rg 46 702 Td (josejerez310@yahoo.com | https://github.com/josejerez27) Tj ET
+BT /F1 9 Tf 0.09 0.13 0.16 rg 46 686 Td () Tj ET
+BT /F2 10 Tf 0.09 0.13 0.16 rg 46 677 Td (PROFESSIONAL SUMMARY) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 660 Td (IT Operations professional specializing in workflow automation, identity management, SaaS) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 647 Td (administration, and enterprise systems. Experienced supporting a workforce of 3,500-5,000 employees) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 634 Td (while designing automations, integrations, and operational workflows that improve efficiency,) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 621 Td (visibility, and service delivery.) Tj ET
+BT /F1 9 Tf 0.09 0.13 0.16 rg 46 608 Td () Tj ET
+BT /F2 10 Tf 0.09 0.13 0.16 rg 46 599 Td (SUPPORT & SERVICE DELIVERY) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 582 Td (4+ years in IT | 5,600+ tickets resolved | < 2h 30m average resolution | < 12 min average first) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 569 Td (response | 3,500-5,000 employees supported) Tj ET
+BT /F1 9 Tf 0.09 0.13 0.16 rg 46 556 Td () Tj ET
+BT /F2 10 Tf 0.09 0.13 0.16 rg 46 547 Td (SELECTED PROJECTS) Tj ET
+BT /F2 10 Tf 0.09 0.13 0.16 rg 46 530 Td (Asset Recovery Automation Platform) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 515 Td (Designed and implemented an automated asset recovery workflow that generates return labels, tracks) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 502 Td (equipment status, automates follow-up communications, and improves asset visibility.) Tj ET
+BT /F1 9 Tf 0.09 0.13 0.16 rg 46 489 Td () Tj ET
+BT /F2 10 Tf 0.09 0.13 0.16 rg 46 482 Td (Verification Management Workflow) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 467 Td (Built a verification workflow with automated intake, applicant tracking, flagged record detection,) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 454 Td (duplicate prevention, notifications, and dashboard reporting.) Tj ET
+BT /F1 9 Tf 0.09 0.13 0.16 rg 46 441 Td () Tj ET
+BT /F2 10 Tf 0.09 0.13 0.16 rg 46 434 Td (SLA Response Automation) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 419 Td (Developed automated reminder and escalation workflows that reduced average first-response times) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 406 Td (from approximately 18-19 minutes to 5-8 minutes.) Tj ET
+BT /F1 9 Tf 0.09 0.13 0.16 rg 46 393 Td () Tj ET
+BT /F2 10 Tf 0.09 0.13 0.16 rg 46 386 Td (Distribution List Request Portal) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 371 Td (Created a structured request workflow replacing manual Slack requests and improving fulfillment) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 358 Td (efficiency.) Tj ET
+BT /F1 9 Tf 0.09 0.13 0.16 rg 46 345 Td () Tj ET
+BT /F1 9 Tf 0.09 0.13 0.16 rg 46 338 Td () Tj ET
+BT /F2 10 Tf 0.09 0.13 0.16 rg 46 329 Td (SKILLS & PLATFORMS) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 312 Td (Workflow Automation | IT Operations | Systems Administration | SaaS Administration | Identity) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 299 Td (Management | ServiceNow | Okta | SSO | SAML | MFA | Google Workspace | Microsoft 365 | Workday |) Tj ET
+BT /F1 9.5 Tf 0.09 0.13 0.16 rg 46 286 Td (Kandji | Genesys Cloud | Meraki | Cloudflare VPN | REST APIs | Asset Management) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3886
+%%EOF
