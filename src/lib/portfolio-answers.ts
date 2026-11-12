@@ -15,7 +15,7 @@ const answers = [
   { matches: /\b(sla|response times?|escalations?|reminders?)\b/i, answer: () => projectAnswer(2) },
   { matches: /\b(distribution|mailing lists?|request portal|service catalog)\b/i, answer: () => projectAnswer(3) },
   { matches: /\bservicenow\b/i, answer: () => `Jose lists ServiceNow among his skills. His projects include:\n\n${[0, 1, 3].map((index) => projectAnswer(index)).join("\n\n")}` },
-  { matches: /\b(projects?|built|build|automations?|workflows?)\b/i, answer: () => `Jose’s featured automation projects:\n\n${profile.projects.map((project) => `• ${project.title}: ${project.description}`).join("\n\n")}` },
+  { matches: /\b(projects?|built|build|automat(?:ions?|e[ds]?|ing)|workflows?)\b/i, answer: () => `Jose’s featured automation projects:\n\n${profile.projects.map((project) => `• ${project.title}: ${project.description}`).join("\n\n")}` },
   { matches: /\b(roles?|positions?|opportunities|looking for|interested in|hiring|hire)\b/i, answer: () => `Jose is interested in ${profile.rolesOfInterest.join(", ")} opportunities. ${contact}` },
   { matches: /\b(contact|email|connect|reach|github)\b/i, answer: () => `Email: ${profile.email}\nGitHub: ${profile.github}` },
   { matches: /\b(skills?|technolog\w*|platforms?|tools?|okta|identity|iam|sso|saml|mfa|saas|workday|kandji|meraki|genesys|microsoft|google|apis?|python|javascript|rust|programming)\b/i, answer: () => `Jose’s listed skills and platforms include:\n\n${profile.skills.join(", ")}.\n\nIf you’re asking about a skill beyond this list, the portfolio doesn’t confirm it. ${contact}` },
@@ -40,5 +40,5 @@ export function getPortfolioAnswer(messages: ChatMessage[]): string {
     const topic = previous && answers.find((entry) => entry.matches.test(previous.content));
     if (topic) return `${topic.answer()}\n\nThat’s the detail currently listed in the portfolio. ${contact}`;
   }
-  return `I can share prepared answers about Jose’s projects, skills, experience, and role interests. Try “What automation projects has Jose built?” or “What is his ServiceNow experience?”\n\nFor anything beyond the portfolio, ${contact}`;
+  return `I can share prepared answers about Jose’s projects, skills, experience, and role interests. Try “What automation projects has Jose built?” or “What is his ServiceNow experience?”\n\n${contact}`;
 }
