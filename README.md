@@ -21,7 +21,7 @@ Open `http://localhost:3000`. On Windows, use `npm.cmd` if PowerShell blocks the
 
 - Professional projects, skills, updated support metrics, work history, and certification sections.
 - `/resume` plus a downloadable one-page PDF generated from the profile content before builds.
-- Ask Jose UI and a server-side OpenAI Responses API integration. An API key/model must be configured to enable AI answers.
+- Ask Jose with server-side Gemini AI and labeled prepared portfolio answers when the key is absent, quota is exhausted, or the provider is unavailable.
 - Spotify artist players, with support for a personal playlist URL.
 - ESPN team schedule/score widgets for the Dodgers, Cowboys, Mammoth, and Jazz.
 - Interactive food/outdoor regional maps; optional Google Maps search; editable favorites and grilling notes.
@@ -57,3 +57,26 @@ npm run test:e2e
 Connect this repository to Vercel with the Next.js preset and the repository root as Root Directory. `vercel.json` sets `npm ci` and `npm run build`. Leave Output Directory automatic. See [.env.example](.env.example) for optional connections; never commit actual keys.
 
 The original public URL returned a Vercel 404. The homepage route existed, but the Vercel project was configured with the Other framework preset. The preset is now Next.js, and the completed source has been published successfully. Read [Publication status](docs/PUBLICATION.md), [Repository audit](docs/REPOSITORY-AUDIT.md), and [Validation](docs/VALIDATION.md) for findings and remaining integration setup.
+
+## Gemini free-tier chat
+
+Set `GEMINI_API_KEY` in Vercel Production and/or ignored `.env.local`. Use a
+Google AI Studio Free tier project with billing disabled. The app cannot detect
+a key’s billing tier; paid-project keys can incur charges. The fixed model is
+`gemini-3.8-flash`, with no paid-provider fallback. Without a key, chat works with
+prepared answers. It also uses those answers for quota errors, provider failures,
+unfinished output, or rate limiting. Responses identify their source.
+
+The page, résumé, and both answer paths use `src/data/profile.json`.
+The app retains conversation history only in tab memory and sends recent messages
+to Google when AI is configured. Google's free tier may use chats to improve its
+products. No Gemini key belongs in GitHub or client-side variables.
+
+The API supports 11 recent messages, 1,000 characters per visitor question, and
+6,000 per assistant reply. AI calls are capped at 20/minute per process plus the
+existing six/minute visitor limiter (optionally shared through Redis). A Gemini
+429 pauses AI calls for a minute, while prepared answers stay available. The
+client uses `/api/ask`; `/api/ask-jose` is a compatibility alias.
+
+See [Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing) and
+[API reference](https://ai.google.dev/api/generate-content).

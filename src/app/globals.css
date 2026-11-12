@@ -132,3 +132,6 @@ h1, .hub-intro h1 { font-weight: 700; }
 @media (max-width: 760px) { .portfolio-shell::before { height: 540px; background-image: linear-gradient(90deg, #10233388, #10233344), linear-gradient(180deg, #10233305 0%, #10233300 45%, #102333 100%), url("/images/dusk-desert.webp"); background-size: auto 540px; background-position: 40% top; }.hub-intro h1 { letter-spacing: -1.4px; } }
 @media (max-width: 360px) { .hub-metrics .metrics-grid strong { font-size: 21px; } }
 @media print { .portfolio-shell::before { display: none; } }
+
+.chat-answer-source { display: block; margin-top: 8px; color: var(--muted); font-size: 9px; }
+.chat-clear { margin: 8px 20px; border: 0; background: transparent; }

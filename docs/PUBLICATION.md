@@ -22,7 +22,7 @@ The first successful production build took approximately 1 minute 35 seconds. Ve
 
 ## Features that still need owner setup
 
-- **Ask Jose:** configure `OPENAI_API_KEY` and `OPENAI_MODEL`. The preview identifies the pending connection and offers direct email. No paid AI calls were made during publishing.
+- **Ask Jose:** configure `GEMINI_API_KEY` from a Google Free tier project with billing disabled. Prepared portfolio answers remain available without AI; the public response source identifies the mode.
 - **Recommendations:** curated reference entries/PDFs can be published without a database. Visitor submissions require durable Redis storage on Vercel, and the review inbox requires `RECOMMENDATION_ADMIN_PASSWORD`. Until storage is connected, the public form offers an email alternative instead of accepting unsavable submissions. See `RECOMMENDATIONS.md`.
 - **Personal content:** add actual letters, work history, certifications, favorite places, and a personal Spotify playlist to `src/data/profile.json`.
 - **Maps:** regional OpenStreetMap embeds and external discovery links work without a key. Add a restricted Google Maps Embed key for in-widget search.

@@ -68,8 +68,7 @@ Copy `.env.example` to `.env.local` for local use. Add the real values in Vercel
 
 | Variable | Purpose |
 | --- | --- |
-| `OPENAI_API_KEY` | Server-only OpenAI project key; enables actual paid/API-credit chat calls |
-| `OPENAI_MODEL` | Model available to your project, e.g. `gpt-4.1-mini` |
+| `GEMINI_API_KEY` | Server-only Google AI Studio key from a Free tier project with billing disabled |
 | `SPOTIFY_PLAYLIST_URL` | Public personal playlist URL; no Spotify key required |
 | `GOOGLE_MAPS_EMBED_KEY` | Optional browser Maps Embed key for live place search in food/trail widgets |
 | `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` | Optional durable, shared chat rate limiter |
@@ -77,9 +76,20 @@ Copy `.env.example` to `.env.local` for local use. Add the real values in Vercel
 
 Redis is optional for chat rate limiting but **required for saving recommendation submissions on Vercel**. Local recommendation records use ignored `.data/` storage. The serverless backend refuses to claim successful storage without Redis. See [Recommendations setup](RECOMMENDATIONS.md) for reference PDFs, publication consent, review, and data retention. Use separate Preview/Production Redis databases.
 
-Ask Jose performs no provider call without both AI settings. It returns an explicit unavailable message rather than generating fake answers. The API sends portfolio facts and recent conversation messages to OpenAI with `store: false`; do not treat that option as a zero-retention guarantee. No chat database is included.
+Ask Jose uses Gemini (`gemini-3.8-flash`) when `GEMINI_API_KEY` is configured.
+Keep billing disabled on the Google project to avoid API charges. The app cannot
+verify a key’s billing tier. It never switches to a paid provider. Missing keys,
+quota exhaustion, provider failures, or visitor limits produce labeled prepared
+portfolio answers from the same profile data. A Gemini 429 pauses AI calls for
+one minute. No chat database is included. Recent messages go to Google when AI
+is configured; free-tier chats may be used to improve Google's products.
 
-Requests are limited to ten messages, 1,000 characters per message, and 450 output tokens. The limiter permits six requests per minute per visitor. Without Upstash, it is per running server instance and resets on restart; for a public AI-enabled Vercel deployment, configure Upstash or an equivalent Vercel firewall limit and set an API project budget. Configure both Upstash variables together. Provider/limiter outages return safe errors. Origin checks do not replace rate limiting.
+Requests are limited to 11 recent messages, 1,000 characters per visitor message,
+and 6,000 per assistant reply. Generation is bounded to 2,048 tokens. The limiter
+permits six AI requests per minute per visitor, plus 20 per minute per process.
+Without Upstash, limits are per running instance and reset on restart. Configure
+both Upstash settings together for shared visitor limits. Limiter failures fall
+back to prepared answers without an AI call. Origin checks do not replace limits.
 
 The Google Maps Embed key appears in the iframe URL by design. Restrict it to the site's domains and the Maps Embed API. Without it, interactive OpenStreetMap regional embeds and Google Maps discovery links work without a key; embedded restaurant/trail search is available once a Maps key is added. Favorite places still need Jose's entries.
 
